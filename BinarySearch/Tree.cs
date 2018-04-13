@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace BinarySearch
 {
-    class Program
+    class Tree
     {
-        //https://www.youtube.com/watch?v=ZNH0MuQ51m4
-        static void Main(string[] args)
-        {
-        }
+        this.root = null;
     }
 }
