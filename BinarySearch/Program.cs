@@ -8,7 +8,7 @@ namespace BinarySearch
 {
     class Program
     {
-        //https://www.youtube.com/watch?v=ZNH0MuQ51m4
+        //https://msdn.microsoft.com/en-us/library/ms379572%28v=vs.80%29.aspx
         static void Main(string[] args)
         {
         }

@@ -6,17 +6,41 @@ using System.Threading.Tasks;
 
 namespace BinarySearch
 {
-    class Node
+    class Node<T>
     {
-        // Member variables
+        private T data;
+        private NodeList<T> neighbors = null;
 
-        // Constructor
-        public Node()
+        public Node() { }
+        public Node(T data) : this(data, null) { }
+        public Node(T data, NodeList<T> neighbors)
         {
-
+            this.data = data;
+            this.neighbors = neighbors;
         }
 
-        // Member methods
+        public T Value
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
 
+        protected NodeList<T> Neighbors
+        {
+            get
+            {
+                return neighbors;
+            }
+            set
+            {
+                neighbors = value;
+            }
+        }
     }
 }
