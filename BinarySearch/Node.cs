@@ -8,13 +8,15 @@ namespace BinarySearch
 {
     class Node
     {
+        // Member variables
 
-        public Node(data)
+        // Constructor
+        public Node()
         {
-            this.data = data;
-            this.left = null;
-            this.right = null;
 
         }
+
+        // Member methods
+
     }
 }
