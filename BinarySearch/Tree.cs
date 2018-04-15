@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinarySearch
 {
-    class Node
+    class Tree
     {
-        public int value;
-        public Node left;
-        public Node right;
     }
 }
