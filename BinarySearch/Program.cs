@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,55 @@ namespace BinarySearch
 {
     class Program
     {
-        //https://msdn.microsoft.com/en-us/library/ms379572%28v=vs.80%29.aspx
         static void Main(string[] args)
         {
+            // https://gist.github.com/aaronjwood/7e0fc962c5cd898b3181
+
+            Node root = null;
+            Tree bst = new Tree();
+            int SIZE = 20000;
+            int[] a = new int[SIZE];
+
+            Console.WriteLine("Generating random array with {0} values...", SIZE);
+
+            Random random = new Random();
+
+            Stopwatch watch = Stopwatch.StartNew();
+
+            for (int i = 0; i < SIZE; i++)
+            {
+                a[i] = random.Next(10000);
+            }
+
+            watch.Stop();
+
+            Console.WriteLine("Done. Took {0} seconds", (double)watch.ElapsedMilliseconds / 1000.0);
+            Console.WriteLine();
+            Console.WriteLine("Filling the tree with {0} nodes...", SIZE);
+
+            watch = Stopwatch.StartNew();
+
+            for (int i = 0; i < SIZE; i++)
+            {
+                root = bst.insert(root, a[i]);
+            }
+
+            watch.Stop();
+
+            Console.WriteLine("Done. Took {0} seconds", (double)watch.ElapsedMilliseconds / 1000.0);
+            Console.WriteLine();
+            Console.WriteLine("Traversing all {0} nodes in tree...", SIZE);
+
+            watch = Stopwatch.StartNew();
+
+            bst.traverse(root);
+
+            watch.Stop();
+
+            Console.WriteLine("Done. Took {0} seconds", (double)watch.ElapsedMilliseconds / 1000.0);
+            Console.WriteLine();
+
+            Console.ReadKey();
         }
     }
 }
